@@ -38,6 +38,25 @@ namespace MLearnSharp
             return result;
         }
 
+        static int BoolToDec(string boolNumber)
+        {
+            int _length = boolNumber.Length;
+            int result = 0;
+
+            foreach(char ch in boolNumber)
+            {
+                int intFromChar = ch - '0';
+                
+                if(intFromChar == 1) { 
+                result += (int)Math.Pow(2 * intFromChar, _length - 1);
+                }
+                _length--;
+            }
+
+            return result;
+
+        }
+
 
         
         
